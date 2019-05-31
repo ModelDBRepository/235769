@@ -1,0 +1,20 @@
+//-----------------------------------------------------------------------// 
+// Geometry and connection of axonal hillock and initial segment		 //
+//-----------------------------------------------------------------------//
+
+
+create hillock, is
+
+hillock	{ 		 
+	nseg=10
+	L=20	
+	diam(0:1)=13:3
+}
+
+is	{ 		
+	L=30	
+	diam=3.3
+}	  
+
+connect hillock(0), soma(0)
+connect is(1), hillock(1)

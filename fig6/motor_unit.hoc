@@ -1,0 +1,15 @@
+load_file("nrngui.hoc")
+xopen("v_e_moto6_export.hoc")
+xopen("add_hil_is.hoc")
+xopen("add_muscle_unit.hoc")
+xopen("mem_mechanism_pass.hoc")
+xopen("mem_mechanism_acti.hoc")
+xopen("mem_mechanism_muscle.hoc")
+xopen("fixnseg.hoc")
+
+xopen("add_pics_syns.hoc")
+xopen("Xm.hoc")
+
+xopen("fig6.ses")
+
+

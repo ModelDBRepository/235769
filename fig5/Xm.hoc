@@ -1,0 +1,9 @@
+//------------------------------------------------------------//
+//Isometric variation of muscle length						  //					
+//------------------------------------------------------------//
+
+// global variables
+objref xm
+
+// Instantiation of xm at the muscle_unit
+muscle_unit xm = new Xm(0.5)

@@ -1,0 +1,44 @@
+//----------------------------------------------//
+// Active properties of the motoneuron model    //
+//----------------------------------------------//
+
+celsius   =  36      			//[degree]
+
+soma	{
+	   insert Naf
+		gnafbar_Naf = 0.71		//[S/cm^2]
+		ena = 50				//[mV]
+	   insert KDr
+		gkdrbar_KDr = 0.23
+		ek = -80				//[mV]
+	   insert CaN
+		gcanbar_CaN = 0.013 	//[S/cm^2]
+	   insert Ca_conc
+	   insert KCa
+		gkcabar_KCa = 0.0258 	//[S/cm^2]
+		ek = -80			 	//[mV]
+}
+
+is {
+	   insert Naf
+		gnafbar_Naf = 2.7			//[S/cm^2]
+		ena = 50					//[mV]
+	   insert Nap
+		gnapbar_Nap = 0.033*10^-3	//[S/cm^2]
+		ena = 50					//[mV]
+	   insert KDr
+		gkdrbar_KDr = 0.17
+		ek = -80					//[mV]
+}
+
+hillock {
+	   insert Naf
+		gnafbar_Naf = 2.7			//[S/cm^2]
+		ena = 50					//[mV]
+	   insert Nap
+		gnapbar_Nap = 0.033*10^-3	//[S/cm^2]
+		ena = 50					//[mV]
+	   insert KDr
+		gkdrbar_KDr = 0.17
+		ek = -80					//[mV]
+}

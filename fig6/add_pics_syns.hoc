@@ -1,0 +1,63 @@
+//-----------------------------------------------------------------------------------------------------------//
+// Localization of synaptic inputs and Ca-PIC channels over dendrites at the similar distance from the soma  //					
+//-----------------------------------------------------------------------------------------------------------//
+
+// global constants
+v_init=-70
+num_row=10000										
+
+// global variables
+objref iCaL[num_row]
+objref iSyn[num_row]
+
+// localization of Ca-PIC channels and synaptic inputs at the similar Dpath
+proc loc_dend(){local max_dist, err_min, i, init, end, err_dist, x_min, j 
+
+	max_dist=0											
+	err_min=0
+	init=0										
+	end=0											
+	err_dist=0										
+	x_min=0
+	j=0
+
+	// calculate the longest Dpath from the soma
+	forall {
+		soma distance(0, 0)							
+		for(x){
+			if (max_dist < distance(x)) {					
+			max_dist = distance(x)
+			}
+		}
+		err_min=max_dist								
+	}
+	
+	// set the specific Dpath
+	i = 600 											 
+  	forall {
+		init = distance(0)				     
+		end  = distance(1)				     
+		if (init<=i && i<end) {				 
+			for(x) {
+				err_dist=abs(i-distance(x))	 
+				if (err_min > err_dist) {	 
+					err_min = err_dist
+					x_min=x
+				}	
+			}
+			if(x_min==0){x_min=0.0001}
+			if(x_min==1){x_min=0.9999}
+			
+			iCaL[j] = new CaL(x_min)
+			iCaL[j].gcalbar=1.37 * area(x_min) * (10^-4)^2 * 10^3 //600um [mS/cm2]
+			
+			iSyn[j] = new RampSyn(x_min)
+			iSyn[j].gmax=1.244 * area(x_min) * (10^-4)^2 * 10^3 //600um [mS/cm2]
+			
+			j=j+1						 
+			err_min=max_dist			  
+		}
+	}
+}
+
+loc_dend()

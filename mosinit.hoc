@@ -1,0 +1,4 @@
+//moddir fig3
+load_file("nrngui.hoc")
+chdir("fig3")
+load_file("motor_unit.hoc")

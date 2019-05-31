@@ -1,0 +1,16 @@
+//----------------------------------------------//
+// Passive properties of the motoneuron model   //
+//----------------------------------------------//
+
+forall {
+		insert pas	
+		g_pas=1/11000 	//[S/cm^2]
+		e_pas=-70 		//[mV]
+		Ra=70 			//[Ohm*cm]
+		cm=1 			//[microF/cm^2]
+}
+
+soma {
+	g_pas=1/225 			//[S/cm^2]
+}
+

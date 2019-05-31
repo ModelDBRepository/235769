@@ -1,0 +1,51 @@
+<html>
+<p>Readme for the simulations associated with:
+</p><p>Hojeong Kim, Muscle length-dependent contribution of motoneuron Cav1.3 channels to force production in model slow motor unit, J App Physiol 123(1):88-105, 2017.
+</p><p>Persistent inward current (PIC)-generating Cav1.3 channels in spinal motoneuron dendrites are thought to be actively recruited during normal behaviors. However, whether and how the activation of PIC channels influences force output of motor unit remains elusive. Here, building a physiologically realistic model of slow motor unit I demonstrated that force production induced by the PIC activation is much smaller for short than lengthened muscles during the regular firing of the motoneuron that transitions from the quiescent state by either a brief current pulse at the soma or a brief synaptic excitation at the dendrites. By contrast, the PIC-induced force potentiation was maximal for short muscles when the motoneuron switched from a stable low-frequency firing state to a stable high-frequency firing state by the current pulse at the soma. Under the synaptic excitation at the dendrites, however, the force could not be potentiated by the transitioning of the motoneuron from a low- to a high-frequency firing state due to the simultaneous onset of PIC at the dendrites and firing at the soma. The strong dependency of the input-output relationship of the motor unit on the neuromodulation and Ia afferent inputs for the PIC channels was further shown under static variations in muscle length. Taken together, these findings suggest that the PIC activation in the motoneuron dendrites may differentially affect the force production of the motor unit, depending not only on the firing state history of the motoneuron and the variation in muscle length but also on the mode of motor activity.
+</p><p>The model motor unit consists of the motoneuron and muscle model that have been developed seperately in our previous studies: 2014 Plos One (Kim, Jones and Heckman) for alpha-motoneurons and 2015 J Neural Eng (Kim, Sandercock and Heckman) for soleus muscles. The input-output properties of the model motor unit presented in Figure 3-6 can be simulated by running the hoc file named motor_unit.hoc in each figure folder.
+<p/>
+If you need general help on running the model please see
+<a href="https://senselab.med.yale.edu/ModelDB/NEURON_DwnldGuide.cshtml">https://senselab.med.yale.edu/ModelDB/NEURON_DwnldGuide.cshtml</a>
+<p/>
+linux example use:<br/>
+------------------<br/>
+Auto launch from modeldb to try fig3 or download the code and compile the 
+mod files for a figure by executing for example:
+<p/>
+unzip Kim2017.zip<br/>
+cd Kim2017<br/>
+nrnivmodl fig3<br/>
+nrngui<br/>
+chdir("fig3")<br/>
+load_file("motor_neuro.hoc")<br/>
+<p/>
+Running the model multiple times with changing the Xm[0] amp window (muscle length) from the default of -8 (optimal) to -16 (short) and 0 (lengthened) between runs while using the Keep lines and Color/Brush options from the graph popup menu, you can create the following graphs similar to figure 3 A (middle) and 3 B:<p/>
+<img src="./images/screenshot3a.png" alt="screenshot3a">
+  <p/>
+<img src="./images/screenshot3b.png" alt="screenshot3b">
+<p/> If you hide the graphs while running the simulations it only takes a minute to generate each simulations graph.
+</p>
+Starting over for the figures with<br/>
+cd ..<br/>
+rm -r -f x86_64<br/>
+nrnivmodl figX<br/>
+nrngui<br/>
+chdir("figX")<br/>
+load_file("motor_neuron.hoc")<br/>
+  <p/> where the figX is fig4, fig5, fig6 can generate (click Init & Run) the default optimal graphs:
+  <p/>part of fig 4<br/>
+<img src="./images/screenshot4.png" alt="screenshot 4">
+  <p/>part of fig 5<br/>
+<img src="./images/screenshot5.png" alt="screenshot 5">
+  <p/>part of fig 6<br/>
+<img src="./images/screenshot6.png" alt="screenshot 6">
+<p/>
+Please note: the chloride ion has been reused as a placeholder for muscle length in the code. See paper and code for more.
+  </p><p>Hojeong Kim<br/>
+Convergence Research Institute<br/>
+<strong>DGIST</strong><br/>
+Daegu Korea
+         
+</p><p><a href="mailto:hojeong.kim03@gmail.com">hojeong.kim03@gmail.com</a>
+</p>
+</html>

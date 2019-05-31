@@ -1,0 +1,14 @@
+//----------------------------------------------------//
+// Passive and active properties of the muscle model  //
+//----------------------------------------------------//
+
+muscle_unit	{
+	// Cable property
+	g_pas = 2*10^-3
+    cm = 20
+	
+	// Calcium dynamics and cross-bridge mechanics
+	insert CaSP
+	insert fHill
+}
+
